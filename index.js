@@ -1,3 +1,4 @@
+const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const { instrument } = require("@socket.io/admin-ui");
@@ -7,6 +8,7 @@ const knex = require("./db");
 const cors = require('cors');
 
 // Socket io admin
+const app = express();
 
 const io = new Server(server, {
   cors: {
