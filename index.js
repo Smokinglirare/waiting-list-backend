@@ -4,6 +4,7 @@ const { instrument } = require("@socket.io/admin-ui");
 
 const server = http.createServer();
 const knex = require("./db");
+const cors = require('cors');
 
 // Socket io admin
 
@@ -33,7 +34,7 @@ instrument(io, {
  * name: string
  * sid: socket.id
  */
-
+app.use(cors());
 let waiting = [];
 
 /**
